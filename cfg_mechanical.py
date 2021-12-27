@@ -36,7 +36,7 @@ cfg.C_DYN_AMPA = 0.184135
 cfg.C_ISLET_AMPA = 0.123535             
 cfg.C_NK1_AMPA = 0.00009
 cfg.C_NK1_NMDA = 8.7447e-05
-cfg.C_NK1_NK1 = 3.2414e-08       *0
+cfg.C_NK1_NK1 = 3.2414e-08       
 cfg.VGLUT3_PKC_AMPA = 0.16629
 cfg.VGLUT3_PKC_NMDA = 0.15549
 cfg.PV_GABA = 0.29416            *0          #*0.6  #alt tuning (7C)
@@ -55,7 +55,7 @@ cfg.DOR_AMPA = 0.002250
 cfg.DOR_NMDA = 0.002250           
 cfg.EX_NK1_AMPA = 8.82981e-06          
 cfg.EX_NK1_NMDA = 2.6699e-05
-cfg.EX_NK1_NK1 = 9.2715e-07      *0
+cfg.EX_NK1_NK1 = 9.2715e-07      
 cfg.DYN_NK1_GABA = 6.3720e-06    *0 
 cfg.DYN_NK1_GLY = 2.3608e-06     *0   
 
