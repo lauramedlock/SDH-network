@@ -87,7 +87,7 @@ netParams.cellParams['NK1Rule'] = cells.PROcellRule
 ## SETTING POPULATION OF SPINAL NEURONS
 netParams.popParams['PKC' ] = {'cellType': 'PKC', 'numCells': 30} # 30 # PKCg+ neurons (excitatory) 200-229 
 netParams.popParams['VGLUT3'] = {'cellType': 'EXdl', 'numCells': 4} # 4 VGLUT3+ neurons (excitatory)  230-233
-netParams.popParams['PV'] = {'cellType': 'IN', 'numCells': 0} # 15 # PV+ neurons (inhibitory)      234-248
+netParams.popParams['PV'] = {'cellType': 'IN', 'numCells': 15} # 15 # PV+ neurons (inhibitory)      234-248
 netParams.popParams['DOR' ] = {'cellType': 'EXdl', 'numCells': 30} # 30 # DOR+ neurons (excitatory)  249-278
 netParams.popParams['TrC'] = {'cellType': 'EXib', 'numCells': 10} # Transient Central neurons (excitatory) 279-288
 netParams.popParams['DYN'] = {'cellType': 'IN', 'numCells': 60} # 60 # Central/DYN+ neurons (inhibitory) 289-348
