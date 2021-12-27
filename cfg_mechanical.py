@@ -20,7 +20,7 @@ cfg.stim_ratios = 0.001 # 0mN -> 0.001, 5mN to 20mN -> 0.001, 25mN -> 0.001 (old
 # STIMULATION RATIO OF AB FIBERS ###
 cfg.AB_ratio = 1.0    # 0mN -> 0.001, 5mN->0.1, 10mN->0.2, 15mN->0.3, 20mN->0.4, 25mN->0.5, 50mN->1.0, 100mN->1.0, 200mN -> 1.0, 400mN -> 1.0, 800mN --> 1.0
 
-cfg.freq = '20mN' #Change freq to match the stimulus given above
+cfg.freq = '200mN' #Change freq to match the stimulus given above
 
 ### SYNAPTIC WEIGHTS FOR FINAL MODEL ###
 cfg.Ab_EX_AMPA = 0.0221559
@@ -62,7 +62,7 @@ cfg.DYN_NK1_GLY = 2.3608e-06
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '20mN-AltTuning-iPV-ePKC'
+cfg.simLabel = '200mN-AltTuning-iPV-ePKC'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
 cfg.saveMat = True
