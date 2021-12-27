@@ -85,13 +85,13 @@ netParams.cellParams['ISLETRule'] = cells.INcellRule
 netParams.cellParams['NK1Rule'] = cells.PROcellRule
 
 ## SETTING POPULATION OF SPINAL NEURONS
-netParams.popParams['PKC' ] = {'cellType': 'PKC', 'numCells': 0} # 30 # PKCg+ neurons (excitatory) 200-229 
+netParams.popParams['PKC' ] = {'cellType': 'PKC', 'numCells': 30} # 30 # PKCg+ neurons (excitatory) 200-229 
 netParams.popParams['VGLUT3'] = {'cellType': 'EXdl', 'numCells': 4} # 4 VGLUT3+ neurons (excitatory)  230-233
-netParams.popParams['PV'] = {'cellType': 'IN', 'numCells': 0} # 15 # PV+ neurons (inhibitory)      234-248
-netParams.popParams['DOR' ] = {'cellType': 'EXdl', 'numCells': 0} # 30 # DOR+ neurons (excitatory)  249-278
+netParams.popParams['PV'] = {'cellType': 'IN', 'numCells': 15} # 15 # PV+ neurons (inhibitory)      234-248
+netParams.popParams['DOR' ] = {'cellType': 'EXdl', 'numCells': 30} # 30 # DOR+ neurons (excitatory)  249-278
 netParams.popParams['TrC'] = {'cellType': 'EXib', 'numCells': 10} # Transient Central neurons (excitatory) 279-288
 netParams.popParams['DYN'] = {'cellType': 'IN', 'numCells': 60} # 60 # Central/DYN+ neurons (inhibitory) 289-348
-netParams.popParams['SOM'] = {'cellType': 'SOM', 'numCells': 0} # 15 # SOM+ neurons (excitatory) 349-363
+netParams.popParams['SOM'] = {'cellType': 'SOM', 'numCells': 15} # 15 # SOM+ neurons (excitatory) 349-363
 netParams.popParams['CR'] = {'cellType': 'CR', 'numCells': 20} # 20 CR+ neurons (excitatory) 364-383
 netParams.popParams['ISLET'] = {'cellType': 'IN', 'numCells': 15} # Islet-type neurons (inhibitory) 384-398
 netParams.popParams['NK1'] = {'cellType': 'PRO', 'numCells': 10} # NK1+ neurons (projection) 399-408
