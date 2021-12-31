@@ -56,16 +56,16 @@ def adjust_box_widths(g, fac):
 
 
 ### Import Data
-DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 7/Figure7C-Data.xlsx')
+DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 8/FigureB-200mN-90IRB.xlsx')
 #DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/GA/disinhibition/Cand10-Dis.xlsx')
 
 # Plotting Figure 3 & 5:
-#fig, ax = plt.subplots(1, sharex=False, figsize=(7*cm, 6*cm), dpi=1200) # fig 3
+# fig, ax = plt.subplots(1, sharex=False, figsize=(7*cm, 6*cm), dpi=1200) # fig 3
 # fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 7*cm), dpi=1200)  # fig 5
 # # my_pal = {"Exp":"grey","Sim":"w"} # for figure 3
 # # my_pal2 = {"Exp":"grey","Sim":"w"} # for figure 3
-# my_pal = {"Control":"w","90% IRB":"black","100% IRB":"#595959"} # for figure 5
-# my_pal2 = {"Control":"w","90% IRB":"black","100% IRB":"#595959"} # for figure 5
+# my_pal = {"Control":"w","90% IRB":"red","100% IRB":"#595959"} # for figure 5
+# my_pal2 = {"Control":"w","90% IRB":"red","100% IRB":"#595959"} # for figure 5
 # # plot line at median
 # x_coordinates = [-0.5, 8.5]
 # y_coordinates = [30, 30]
@@ -76,7 +76,7 @@ DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH
 # ax.set_xticklabels(labels=["0","5","10","15","20","25","50","100","200"])
 # #ax.set_xticklabels(labels=["50 mN","100 mN","200 mN"])
 # ax.set(xlabel='', ylabel='')
-# ax.set(xlabel='Mechanical Force', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
+# ax.set(xlabel='Mechanical Force (mN)', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
 # # #ax.legend_.set_title(None)
 # ax.set_ylim([-5,90])
 # ax.legend_.remove()
@@ -103,7 +103,7 @@ DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH
 # ax.legend_.remove()
 #Plotting Fig 6C:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(3.8*cm, 6*cm), dpi=1200)
-# forces = [0, 25, 50, 100, 200]
+# forces = [0, 20, 50, 100, 200]
 # medians = DataMatrix.iloc[0:6,1:6]
 # for i in range(0,len(forces)+1):
 #     plt.plot(forces,medians.iloc[i], "k-o", linewidth=1.0, markersize=2)
@@ -239,15 +239,15 @@ DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH
 # plt.setp(ax[4].lines, color='k', linewidth=0.5)
 # plt.setp(ax[4].artists, edgecolor='k',linewidth=0.5)
 ## Plotting Figure 7C:
-fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 5*cm), dpi=1200)
-my_pal = {"Control":"#000000","DYN-":"#FF0000","VGLUT3-":"#6699FF","CR-":"#9966FF"}
-my_pal2 = {"Control":"white","DYN-":"white","VGLUT3-":"white","CR-":"white"}
-ax = sns.boxplot(x="Stimulus Intensity", y="Firing Rate", hue="Mechanical Force", palette = my_pal2, data=DataMatrix, color='w',showfliers = False)
-ax = sns.stripplot(x="Stimulus Intensity", y="Firing Rate", hue="Mechanical Force", data=DataMatrix,palette=my_pal,size=5,edgecolor="black",jitter=False,linewidth=0.5,dodge=True)
-ax.set_xticklabels(labels=["20 mN","50 mN","100 mN","200 mN"])
-ax.set_ylim([-1,40])
-ax.set(xlabel='', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
-ax.legend_.remove()
+# fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 5*cm), dpi=1200)
+# my_pal = {"Control":"#000000","DYN-":"#FF0000","VGLUT3-":"#6699FF","CR-":"#9966FF"}
+# my_pal2 = {"Control":"white","DYN-":"white","VGLUT3-":"white","CR-":"white"}
+# ax = sns.boxplot(x="Stimulus Intensity", y="Firing Rate", hue="Mechanical Force", palette = my_pal2, data=DataMatrix, color='w',showfliers = False)
+# ax = sns.stripplot(x="Stimulus Intensity", y="Firing Rate", hue="Mechanical Force", data=DataMatrix,palette=my_pal,size=5,edgecolor="black",jitter=False,linewidth=0.5,dodge=True)
+# ax.set_xticklabels(labels=["20 mN","50 mN","100 mN","200 mN"])
+# ax.set_ylim([-1,40])
+# ax.set(xlabel='', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
+# ax.legend_.remove()
 
 # # Plot Figure 8B:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(6.6*cm, 6*cm), dpi=1200)
@@ -262,8 +262,6 @@ ax.legend_.remove()
 # ax.set_yticks([0,10,20,30,40,50,60,70,80])
 # ax.set_xticklabels(labels=["25","50","200"])
 # ax.legend_.remove()
-
-
 # Plot Figure 8C:
 # col1 = "orchid"
 # col2 = "slateblue"
@@ -291,12 +289,11 @@ ax.legend_.remove()
 # for axis in ['left']:
 #   ax.spines[axis].set_linewidth(1.0)
 #   ax.spines[axis].set_color(col1)
-  
 # for axis in ['right']:
 #   ax2.spines[axis].set_linewidth(1.0)
 #   ax2.spines[axis].set_color(col2)
 
-#Plotting Figure 9 (Comparison):
+#Plotting Figure 9 (OLD):
 # fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 7*cm), dpi=1200)
 # #my_pal = {"Control":"white","GABA Gly Block":"white","iPV Ablation":"white","EANION":"white"}  
 # my_pal = {"black"}  
@@ -308,9 +305,33 @@ ax.legend_.remove()
 # ax.set_xticklabels(labels=["10","25","50","200"])
 # ax.legend_.remove()
 
-#Plotting Figure 10:
+## Plot Figure 9 (NEW):
+# fig, ax = plt.subplots(1, sharex=False, figsize=(6.6*cm, 7*cm), dpi=1200)
+# my_pal = {"Control":"white", "IRB":"red","CD":"pink"}
+# my_pal2 = {"Control":"white", "IRB":"red","CD":"pink"}
+# ax = sns.boxplot(x="Force", y="Firing Rate",hue="Change",data=DataMatrix,palette=my_pal, showfliers = False)
+# ax = sns.stripplot(x="Force", y="Firing Rate",hue="Change",data=DataMatrix,size=4,palette=my_pal2,jitter=False,edgecolor="black",dodge=True,linewidth=0.5)
+# ax.set(xlabel='Mechanical Force (mN)', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
+# ax.set_ylim([-5,90])
+# ax.set_yticks([0,10,20,30,40,50,60,70,80,90])
+# ax.set_xticklabels(labels=["25","200"])
+# ax.legend_.remove()
+# # Plot Figure 9NewB:
+# fig, ax = plt.subplots(1, sharex=False, figsize=(11.6*cm, 7*cm), dpi=1200)
+# my_pal = {"Normal":"white", "IRB":"red","CD":"pink"}
+# my_pal2 = {"Normal":"white", "IRB":"red","CD":"pink"}
+# order1 = ['iPV','iISLET','iDYN','eVGLUT3','ePKC','eDOR','eTrC','eSST','eCR','pNK1']
+# ax = sns.boxplot(x="Interneuron", y="Firing Rate",hue="Condition",order=order1,data=DataMatrix, palette=my_pal, showfliers = False)
+# #ax = sns.stripplot(x="Interneuron", y="Firing Rate",hue="Condition",data=DataMatrix,size=4,palette=my_pal2,jitter=False,edgecolor="black",dodge=True,linewidth=0.5)
+# ax.set(xlabel='Interneuron Population', ylabel='Firing Rate (spk/s)')
+# ax.set_ylim([-5,200])
+# ax.set_yticks([0,50,100,150,200])
+# ax.set_xticklabels(labels=order1,rotation=45)
+# ax.legend_.remove()
+
+#Plotting Figure 10B:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 6*cm), dpi=1200)
-# my_pal = {"25mN":"grey","200mN":"black"}
+# my_pal = {"20mN":"grey","200mN":"black"}
 # ax = sns.boxplot(x="Mechanical Force", y="Firing Rate", data=DataMatrix, color='w', showfliers = False)
 # ax = sns.stripplot(x="Mechanical Force", y="Firing Rate",hue="Force", data=DataMatrix,palette=my_pal,size=5,jitter=False,edgecolor="black",linewidth=0.5)
 # ax.set(xlabel='', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
@@ -320,23 +341,23 @@ ax.legend_.remove()
 
 # Plot Figure 11A&B:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(8*cm, 5*cm), dpi=1200)
-# #my_pal = {"#b2b2b2"} # for 25mN
-# my_pal = {"#000000"} # for 200mN
+# my_pal = {"#b2b2b2"} # for 25mN
+# #my_pal = {"#000000"} # for 200mN
 # ax = sns.boxplot(x="Baseline", y="Firing Rate", data=DataMatrix,color='w', width=0.6, dodge=True, showfliers = False)
-# ax = sns.stripplot(x="Baseline", y="Firing Rate",data=DataMatrix, palette=my_pal, jitter=False, size=4,edgecolor="black",dodge=True,linewidth=0.1)
+# ax = sns.stripplot(x="Baseline", y="Firing Rate",data=DataMatrix, palette=my_pal, jitter=False, size=4,edgecolor="black",dodge=True,linewidth=0.5)
 # ax.set(xlabel='',ylabel='')
 # ax.set_xticklabels(labels=["0","20","40","60","80","100","120","140","160"])
 # ax.set_ylim([-5,140])
 # ax.set_yticks([0,70,140])
-# #Plot Figure 8D:
+# #Plot Figure 11C:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(8.8*cm, 5*cm), dpi=1200)
-# my_pal = {"25mN":"grey","200mN":"black"}
+# my_pal = {"20mN":"#b2b2b2","200mN":"black"}
 # ax = sns.boxplot(x="Mechanical Force", y="Firing Rate", data=DataMatrix, color='w', showfliers = False)
 # ax = sns.stripplot(x="Mechanical Force", y="Firing Rate",hue="Force", data=DataMatrix,palette=my_pal,size=5,jitter=False,edgecolor="black",linewidth=0.5)
 # ax.set(xlabel='', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
-# ax.set_ylim([-5,80])
-# ax.set_yticks([0,20,40,60,80])
-# ax.set_xticklabels(labels=["Control","EANION","EANION\n+110","EANION\n+120","EANION\n+150","Control","EANION","EANION\n+110","EANION\n+120","EANION\n+150"])
+# ax.set_ylim([-5,100])
+# ax.set_yticks([0,20,40,60,80,100])
+# ax.set_xticklabels(labels=["Control","IRB","IRB\n+110","IRB\n+150","IRB\n+180","Control","IRB","IRB\n+110","IRB\n+150","IRB\n+180"])
 # ax.legend_.remove()
 
 # Plotting Figure X (GA):
@@ -390,8 +411,8 @@ for axis in ['left','bottom']:
 plt.tight_layout()
 
 # Saving Figures:
-fig.savefig('Figure7C-New.svg', format='svg', dpi=1200)
-fig.savefig('Figure7C-New.png', format='png', dpi=1200)
+fig.savefig('Figure9B-New-200mN-90IRB.svg', format='svg', dpi=1200)
+fig.savefig('Figure9B-New-200mN-90IRB.png', format='png', dpi=1200)
 
 # fig.savefig('Cand10-Dis.svg', format='svg', dpi=1200)
 # fig.savefig('Cand10-Dis.png', format='png', dpi=1200)
