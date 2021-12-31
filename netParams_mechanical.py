@@ -106,9 +106,9 @@ netParams.synMechParams['NMDA']  = {'mod': 'NMDA_DynSyn'   , 'tau_rise': 2  , 't
 netParams.synMechParams['NK13']  = {'mod': 'NK1_DynSyn'    , 'tau_rise': 100, 'tau_decay': 1000         }
 netParams.synMechParams['NK23']  = {'mod': 'NK1_DynSyn'    , 'tau_rise': 200, 'tau_decay': 3000         }
 netParams.synMechParams['GABA']  = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -45 }  # GABA for Excitatory Neur
-netParams.synMechParams['GABA2'] = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -70 }  # GABA for Inhibitory Neur
+netParams.synMechParams['GABA2'] = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -45 }  # GABA for Inhibitory Neur
 netParams.synMechParams['GLY']   = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -45 }  # Gly for Excitatory Neur
-netParams.synMechParams['GLY2']  = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -70 }  # Gly for Inhibitory Neur
+netParams.synMechParams['GLY2']  = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -45 }  # Gly for Inhibitory Neur
 
 ###################################################################################################################################
 #   Connect the spinal cord stimulation/natural input
