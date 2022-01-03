@@ -34,8 +34,8 @@ for i in range(80):
     spkt_C_ = inh_poisson_generator(rate_C, t, 5000, seed=123)
     spkt_C.append(spkt_C_)
 
-#with open('spkt_SAI_%s.json' %(cfg.freq), 'w') as SAI: json.dump(spkt_SAI, SAI)
-#with open('spkt_SAII_%s.json' %(cfg.freq), 'w') as SAII: json.dump(spkt_SAII, SAII)
-with open('spkt_Ad_%s-New.json' %(cfg.freq), 'w') as Ad: json.dump(spkt_Ad, Ad)
-with open('spkt_C_%s-New.json' %(cfg.freq), 'w') as  C: json.dump(spkt_C, C)
+with open('spkt_SAI_%s.json' %(cfg.freq), 'w') as SAI: json.dump(spkt_SAI, SAI)
+with open('spkt_SAII_%s.json' %(cfg.freq), 'w') as SAII: json.dump(spkt_SAII, SAII)
+with open('spkt_Ad_%s.json' %(cfg.freq), 'w') as Ad: json.dump(spkt_Ad, Ad)
+with open('spkt_C_%s.json' %(cfg.freq), 'w') as  C: json.dump(spkt_C, C)
 # %%
