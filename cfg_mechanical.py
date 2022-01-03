@@ -62,7 +62,7 @@ cfg.DYN_NK1_GLY = 2.3608e-06     *0.1
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '30mN-IRB-100'
+cfg.simLabel = '30mN-IRB-90'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
 cfg.saveMat = False
