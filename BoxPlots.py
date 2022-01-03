@@ -56,7 +56,7 @@ def adjust_box_widths(g, fac):
 
 
 ### Import Data
-DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 8/FigureB-200mN-90IRB.xlsx')
+DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 9/FigureA-Data-20mN.xlsx')
 #DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/GA/disinhibition/Cand10-Dis.xlsx')
 
 # Plotting Figure 3 & 5:
@@ -306,16 +306,16 @@ DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH
 # ax.legend_.remove()
 
 ## Plot Figure 9 (NEW):
-# fig, ax = plt.subplots(1, sharex=False, figsize=(6.6*cm, 7*cm), dpi=1200)
-# my_pal = {"Control":"white", "IRB":"red","CD":"pink"}
-# my_pal2 = {"Control":"white", "IRB":"red","CD":"pink"}
-# ax = sns.boxplot(x="Force", y="Firing Rate",hue="Change",data=DataMatrix,palette=my_pal, showfliers = False)
-# ax = sns.stripplot(x="Force", y="Firing Rate",hue="Change",data=DataMatrix,size=4,palette=my_pal2,jitter=False,edgecolor="black",dodge=True,linewidth=0.5)
-# ax.set(xlabel='Mechanical Force (mN)', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
-# ax.set_ylim([-5,90])
-# ax.set_yticks([0,10,20,30,40,50,60,70,80,90])
-# ax.set_xticklabels(labels=["25","200"])
-# ax.legend_.remove()
+fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 7*cm), dpi=1200)
+my_pal = {"Control":"white", "IRB":"red","CD":"pink"}
+my_pal2 = {"Control":"white", "IRB":"red","CD":"pink"}
+ax = sns.boxplot(x="Force", y="Firing Rate",hue="Change",data=DataMatrix,palette=my_pal, showfliers = False)
+ax = sns.stripplot(x="Force", y="Firing Rate",hue="Change",data=DataMatrix,size=4,palette=my_pal2,jitter=False,edgecolor="black",dodge=True,linewidth=0.5)
+ax.set(xlabel='Mechanical Force (mN)', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
+ax.set_ylim([-5,90])
+ax.set_yticks([0,10,20,30,40,50,60,70,80,90])
+ax.set_xticklabels(labels=["0","10","20","50","100","200"])
+ax.legend_.remove()
 # # Plot Figure 9NewB:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(11.6*cm, 7*cm), dpi=1200)
 # my_pal = {"Normal":"white", "IRB":"red","CD":"pink"}
@@ -411,8 +411,8 @@ for axis in ['left','bottom']:
 plt.tight_layout()
 
 # Saving Figures:
-fig.savefig('Figure9B-New-200mN-90IRB.svg', format='svg', dpi=1200)
-fig.savefig('Figure9B-New-200mN-90IRB.png', format='png', dpi=1200)
+fig.savefig('Figure9A-New.svg', format='svg', dpi=1200)
+fig.savefig('Figure9A-New.png', format='png', dpi=1200)
 
 # fig.savefig('Cand10-Dis.svg', format='svg', dpi=1200)
 # fig.savefig('Cand10-Dis.png', format='png', dpi=1200)
