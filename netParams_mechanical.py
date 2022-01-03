@@ -280,7 +280,7 @@ netParams.connParams['Ad_AMPA->DOR'] = {
     'delay': 5.0,
     'loc': 0.50,
     'synMech': 'AMPA'}
-i
+
 netParams.connParams['Ad_NMDA->DOR'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'Ad'}, 
