@@ -62,7 +62,7 @@ cfg.DYN_NK1_GLY = 2.3608e-06
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '20mN-CD'
+cfg.simLabel = '20mN-CD-Fig7CTuning'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
 cfg.saveMat = False
