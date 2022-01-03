@@ -105,10 +105,10 @@ netParams.synMechParams['AMPA']  = {'mod': 'AMPA_DynSyn'   , 'tau_rise': 0.1, 't
 netParams.synMechParams['NMDA']  = {'mod': 'NMDA_DynSyn'   , 'tau_rise': 2  , 'tau_decay': 100          }
 netParams.synMechParams['NK13']  = {'mod': 'NK1_DynSyn'    , 'tau_rise': 100, 'tau_decay': 1000         }
 netParams.synMechParams['NK23']  = {'mod': 'NK1_DynSyn'    , 'tau_rise': 200, 'tau_decay': 3000         }
-netParams.synMechParams['GABA']  = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -70 }  # GABA for Excitatory Neur
-netParams.synMechParams['GABA2'] = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -70 }  # GABA for Inhibitory Neur
-netParams.synMechParams['GLY']   = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -70 }  # Gly for Excitatory Neur
-netParams.synMechParams['GLY2']  = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -70 }  # Gly for Inhibitory Neur
+netParams.synMechParams['GABA']  = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -45 }  # GABA for Excitatory Neur
+netParams.synMechParams['GABA2'] = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -45 }  # GABA for Inhibitory Neur
+netParams.synMechParams['GLY']   = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -45 }  # Gly for Excitatory Neur
+netParams.synMechParams['GLY2']  = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -45 }  # Gly for Inhibitory Neur
 
 ###################################################################################################################################
 #   Connect the spinal cord stimulation/natural input
@@ -670,7 +670,7 @@ netParams.connParams['DYN_GABA->SOM'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'DYN'}, 
     'postConds': {'popLabel':'SOM'},  
-    'weight': cfg.DYN_EX_GABA,           
+    'weight': cfg.DYN_EX_GABA *0,           
     'probability': 0.2,
     'sec': 'dend',
     'delay': 0.5, 
@@ -681,7 +681,7 @@ netParams.connParams['DYN_GLY->SOM'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'DYN'}, 
     'postConds': {'popLabel':'SOM'},  
-    'weight': cfg.DYN_EX_GLY,           
+    'weight': cfg.DYN_EX_GLY *0,           
     'probability': 0.2,
     'sec': 'dend',
     'delay': 0.5, 
@@ -781,7 +781,7 @@ netParams.connParams['DYN_GABA->CR'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'DYN'}, 
     'postConds': {'popLabel':'CR'},  
-    'weight': cfg.DYN_EX_GABA,           
+    'weight': cfg.DYN_EX_GABA *0,           
     'probability': 0.2,
     'sec': 'dend',
     'delay': 0.5, 
@@ -792,7 +792,7 @@ netParams.connParams['DYN_GLY->CR'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'DYN'}, 
     'postConds': {'popLabel':'CR'},  
-    'weight': cfg.DYN_EX_GLY,           
+    'weight': cfg.DYN_EX_GLY *0,           
     'probability': 0.2,
     'sec': 'dend',
     'delay': 0.5, 
