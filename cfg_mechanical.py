@@ -36,7 +36,7 @@ cfg.C_DYN_AMPA = 0.184135
 cfg.C_ISLET_AMPA = 0.123535             
 cfg.C_NK1_AMPA = 0.00009       
 cfg.C_NK1_NMDA = 8.7447e-05    
-cfg.C_NK1_NK1 = 3.2414e-08        
+cfg.C_NK1_NK1 = 3.2414e-08        *0
 cfg.VGLUT3_PKC_AMPA = 0.16629
 cfg.VGLUT3_PKC_NMDA = 0.15549
 cfg.PV_GABA = 0.29416             *0                #*0.6  #alt tuning (7C)
@@ -62,19 +62,19 @@ cfg.DYN_NK1_GLY = 2.3608e-06     *0
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '20mN-NK1R-CR'
+cfg.simLabel = '20mN-NK1R-Cfiber'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
-cfg.saveMat = False
+cfg.saveMat = True
 cfg.saveJson = True
 
 # ANALYSIS AND PLOTTING
 cells = [x for x in range(400, 410, 1)]
-cfg.analysis['plotRaster'] = {'include': ['all'], 'timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False} #'raster.png'
+#cfg.analysis['plotRaster'] = {'include': ['all'], 'timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False} #'raster.png'
 # cfg.analysis['plotSpikeHist'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'spikeHistBin': 5, 'saveFig': True, 'showFig': False}
-cfg.analysis['plotSpikeStats'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'saveFig': True, 'showFig': False}
+#cfg.analysis['plotSpikeStats'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'saveFig': True, 'showFig': False}
 # cfg.analysis['plotConn'] = {'includePre': ['all'], 'includePost': ['all'], 'feature': 'weight', 'saveFig': True, 'showFig': False, 'logPlot': True}
-cfg.analysis['plotTraces'] = {'include': [399,400,401,402,403,404,405,406,407,408,409],'oneFigPer':'trace','timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False}
+#cfg.analysis['plotTraces'] = {'include': [399,400,401,402,403,404,405,406,407,408,409],'oneFigPer':'trace','timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False}
 # cfg.analysis['plot2Dnet'] = False 
 
 # use for GA simulation

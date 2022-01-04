@@ -925,7 +925,7 @@ netParams.connParams['CR_NK1->NK1'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'CR'}, 
     'postConds': {'popLabel': 'NK1'},  
-    'weight': cfg.EX_NK1_NK1 *0,
+    'weight': cfg.EX_NK1_NK1,
     'probability': 0.2,
     'sec': 'dend',
     'delay': 0.5, 
