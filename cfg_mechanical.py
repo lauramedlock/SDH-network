@@ -39,12 +39,12 @@ cfg.C_NK1_NMDA = 8.7447e-05
 cfg.C_NK1_NK1 = 3.2414e-08       
 cfg.VGLUT3_PKC_AMPA = 0.16629
 cfg.VGLUT3_PKC_NMDA = 0.15549
-cfg.PV_GABA = 0.29416                            #*0.6  #alt tuning (7C)
-cfg.PV_GLY =  0.011521                           #*0.6  #alt tuning (7C)
-cfg.DYN_ISLET_GABA = 0.36182        
-cfg.ISLET_GABA = 0.34293            
-cfg.DYN_EX_GABA = 4.50e-05                       #*25  #alt tuning (7C)
-cfg.DYN_EX_GLY = 4.50e-05                        #*25  #alt tuning (7C)
+cfg.PV_GABA = 0.29416          *0  *0.6  #alt tuning (7C)
+cfg.PV_GLY =  0.011521         *0  *0.6  #alt tuning (7C)
+cfg.DYN_ISLET_GABA = 0.36182 
+cfg.ISLET_GABA = 0.34293     
+cfg.DYN_EX_GABA = 4.50e-05       *25  #alt tuning (7C)
+cfg.DYN_EX_GLY = 4.50e-05        *25  #alt tuning (7C)
 cfg.PKC_AMPA = 0.0021
 cfg.PKC_NMDA = 0.00315
 cfg.TrC_AMPA = 0.00225             
@@ -62,7 +62,7 @@ cfg.DYN_NK1_GLY = 2.3608e-06
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '20mN'
+cfg.simLabel = '20mN-AltTuning-iPV'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
 cfg.saveMat = False
