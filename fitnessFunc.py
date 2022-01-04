@@ -4,7 +4,7 @@ from statistics import median, mean
 import json
 import pandas as pd
 
-with open('data/10mN-CD.json', 'rb') as mechData: mechData = json.load(mechData)
+with open('data/200mN-IRB-CRNK1.json', 'rb') as mechData: mechData = json.load(mechData)
 
 fitnessData = mechData['simData']
 
