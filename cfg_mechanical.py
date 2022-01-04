@@ -36,7 +36,7 @@ cfg.C_DYN_AMPA = 0.184135
 cfg.C_ISLET_AMPA = 0.123535             
 cfg.C_NK1_AMPA = 0.00009       
 cfg.C_NK1_NMDA = 8.7447e-05    
-cfg.C_NK1_NK1 = 3.2414e-08        *0
+cfg.C_NK1_NK1 = 3.2414e-08        
 cfg.VGLUT3_PKC_AMPA = 0.16629
 cfg.VGLUT3_PKC_NMDA = 0.15549
 cfg.PV_GABA = 0.29416             *0                #*0.6  #alt tuning (7C)
@@ -62,7 +62,7 @@ cfg.DYN_NK1_GLY = 2.3608e-06     *0
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '20mN-NK1R-Cfiber'
+cfg.simLabel = '20mN-NK1R-CR'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
 cfg.saveMat = True
