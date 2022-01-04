@@ -73,14 +73,14 @@ cells.PROcellRule['conds'] = {'cellType': 'PRO'}
 
 cells.PROcellRule['secs']['soma']['threshold'] = 0
 
-netParams.cellParams['PKC'] = cells.PKCRule
-netParams.cellParams['VGLUT3Rule'] = cells.EXdelayedRule
+netParams.cellParams['PKC'] = cells.INcellRule #PKCRule
+netParams.cellParams['VGLUT3Rule'] = cells.INcellRule #EXdelayedRule
 netParams.cellParams['PVRule'] = cells.INcellRule
-netParams.cellParams['DORRule'] = cells.EXdelayedRule
+netParams.cellParams['DORRule'] = cells.INcellRule #EXdelayedRule
 netParams.cellParams['TrCRule'] = cells.EXinitialRule
 netParams.cellParams['DYNRule'] = cells.INcellRule
-netParams.cellParams['SOMRule'] = cells.SOMRule
-netParams.cellParams['CRRule'] = cells.CRRule
+netParams.cellParams['SOMRule'] = cells.INcellRule #SOMRule
+netParams.cellParams['CRRule'] = cells.INcellRule #CRRule
 netParams.cellParams['ISLETRule'] = cells.INcellRule
 netParams.cellParams['NK1Rule'] = cells.PROcellRule
 
