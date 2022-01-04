@@ -892,7 +892,7 @@ netParams.connParams['SOM_NK1->NK1'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'SOM'}, 
     'postConds': {'popLabel': 'NK1'},  
-    'weight': cfg.EX_NK1_NK1 *0,
+    'weight': cfg.EX_NK1_NK1,
     'probability': 0.2,
     'sec': 'dend',
     'delay': 0.5, 
