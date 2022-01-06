@@ -60,8 +60,8 @@ cfg.DYN_NK1_GABA = 6.3720e-06   *0
 cfg.DYN_NK1_GLY = 2.3608e-06    *0    
 
 # testing Ab-->eSST
-cfg.Ab_SOM_AMPA = 0.03  # Same as Ab-->E
-cfg.Ab_SOM_NMDA = 0.02  # Same as Ab-->E
+cfg.Ab_SOM_AMPA = 0.05  
+cfg.Ab_SOM_NMDA = 0.05  
 
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
