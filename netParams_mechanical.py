@@ -114,6 +114,28 @@ netParams.synMechParams['GLY2']  = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 't
 #   Connect the spinal cord stimulation/natural input
 ###################################################################################################################################
 # from Ab_SAI to interneurons
+netParams.connParams['Ab_SAI_AMPA->SOM'] = {         # testing Ab-->eSST for R2
+    'oneSynPerNetcon': True,
+    'preConds': {'popLabel': 'Ab_SAI'}, 
+    'postConds': {'popLabel': 'SOM'},  
+    'weight': cfg.Ab_SOM_AMPA,           
+    'sec': 'dend',
+    'probability': 0.2,
+    'delay': 1.0,
+    'loc': 0.5,
+    'synMech': 'AMPA'} 
+
+netParams.connParams['Ab_SAI_NMDA->SOM'] = {         # testing Ab-->eSST for R2
+    'oneSynPerNetcon': True,
+    'preConds': {'popLabel': 'Ab_SAI'}, 
+    'postConds': {'popLabel': 'SOM'},  
+    'weight': cfg.Ab_SOM_NMDA,           
+    'sec': 'dend',
+    'probability': 0.2,
+    'delay': 1.0,
+    'loc': 0.5,
+    'synMech': 'NMDA'} 
+
 netParams.connParams['Ab_SAI_AMPA->PKC'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'Ab_SAI'}, 
@@ -192,6 +214,29 @@ netParams.connParams['Ab_SAI_AMPA->DYN'] = {
     'synMech': 'AMPA'} 
 
 # from Ab_SAII to interneurons
+netParams.connParams['Ab_SAII_AMPA->SOM'] = {          # testing Ab-->eSST for R2
+    'oneSynPerNetcon': True,
+    'preConds': {'popLabel': 'Ab_SAII'}, 
+    'postConds': {'popLabel': 'SOM'},  
+    'weight': cfg.Ab_SOM_AMPA,           
+    'sec': 'dend',
+    'probability': 0.2,
+    'delay': 1.0,
+    'loc': 0.5,
+    'synMech': 'AMPA'} 
+
+netParams.connParams['Ab_SAII_NMDA->SOM'] = {           # testing Ab-->eSST for R2
+    'oneSynPerNetcon': True,
+    'preConds': {'popLabel': 'Ab_SAII'}, 
+    'postConds': {'popLabel': 'SOM'},  
+    'weight': cfg.Ab_SOM_NMDA,           
+    'sec': 'dend',
+    'probability': 0.2,
+    'delay': 1.0,
+    'loc': 0.5,
+    'synMech': 'NMDA'} 
+
+
 netParams.connParams['Ab_SAII_AMPA->PKC'] = {
     'oneSynPerNetcon': True,
     'preConds': {'popLabel': 'Ab_SAII'}, 
