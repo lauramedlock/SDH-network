@@ -9,6 +9,8 @@ For plotting figures (Sekiguchi et al. 2021)
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
+import numpy as np
 
 
 font = {'family' : 'Arial Narrow',
@@ -56,8 +58,38 @@ def adjust_box_widths(g, fac):
 
 
 ### Import Data
-DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 10/Figure10-Data.xlsx')
+DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Afferents/PAN-Scaling.xlsx')
 #DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/GA/disinhibition/Cand10-Dis.xlsx')
+
+# Figure 1A (PAN Scaling)
+fig, ax = plt.subplots(1, sharex=False, figsize=(4.5*cm, 3.5*cm), dpi=1200)
+forces = DataMatrix.iloc[0,1:15]
+scale = DataMatrix.iloc[[1,2],1:15]
+clr = ['grey','black']
+for i in range(0,len(scale)):
+    plt.plot(forces,scale.iloc[i], "-", color=clr[i], linewidth=1.0, markersize=2)
+    ax.set_ylim(-0.1,1.05)
+    ax.set_yticks([0,1])
+    ax.set_xscale('log')
+    ax.set_xticks([0,5,10,20,50,100,200,400])
+    ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
+    ax.set_xlim(0,400)
+    ax.set(xlabel='Mechanical Force (mN)', ylabel='Scale Factor')
+# Figure 1A (PAN FIRING)
+# fig, ax = plt.subplots(1, sharex=False, figsize=(4.5*cm, 3.5*cm), dpi=1200)
+# forces = DataMatrix.iloc[0,1:15]
+# scale = DataMatrix.iloc[[1,2,3],1:15]
+# clr = ['#986632','#666733','#cb9932']
+# for i in range(0,len(scale)):
+#     plt.plot(forces,scale.iloc[i], "-", color=clr[i], linewidth=1.0, markersize=2)
+#     ax.set_ylim(-1,20)
+#     ax.set_yticks([0,5,10,15,20])
+#     ax.set_xscale('log')
+#     ax.set_xticks([0,5,10,20,50,100,200,400])
+#     ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
+#     ax.set_xlim(0,410)
+#     ax.set(xlabel='Mechanical Force (mN)', ylabel='Average Firing Rate (spk/s)')
+
 
 # Plotting Figure 3 & 5:
 #fig, ax = plt.subplots(1, sharex=False, figsize=(7*cm, 6*cm), dpi=1200) # fig 3
@@ -362,15 +394,15 @@ DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH
 # ax.legend_.remove()
 
 #Plotting Figure 10B:
-fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 6*cm), dpi=1200)
-my_pal = {"20mN":"#b2b2b2","200mN":"black"}
-ax = sns.boxplot(x="Mechanical Force", y="Firing Rate", data=DataMatrix, color='w', showfliers = False)
-ax = sns.stripplot(x="Mechanical Force", y="Firing Rate",hue="Force", data=DataMatrix,palette=my_pal,size=5,jitter=False,edgecolor="black",linewidth=0.5)
-ax.set(xlabel='', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
-ax.set_ylim([-5,90])
-ax.set_yticks([0,10,20,30,40,50,60,70,80,90])
-ax.set_xticklabels(labels=["Control","NK1R-","GABAR-\nGlyR-","GABAR-\nGlyR-\nCNK1-","GABAR-\nGlyR-\nSSTNK1-","GABAR-\nGlyR-\nCRNK1-","GABAR-\nGlyR-\nAllNK1-","Control","NK1R-","GABAR-\nGlyR-","GABAR-\nGlyR-\nCNK1-","GABAR-\nGlyR-\nSSTNK1-","GABAR-\nGlyR-\nCRNK1-","GABAR-\nGlyR-\nAllNK1-"])
-ax.legend_.remove()
+# fig, ax = plt.subplots(1, sharex=False, figsize=(8.5*cm, 6*cm), dpi=1200)
+# my_pal = {"20mN":"#b2b2b2","200mN":"black"}
+# ax = sns.boxplot(x="Mechanical Force", y="Firing Rate", data=DataMatrix, color='w', showfliers = False)
+# ax = sns.stripplot(x="Mechanical Force", y="Firing Rate",hue="Force", data=DataMatrix,palette=my_pal,size=5,jitter=False,edgecolor="black",linewidth=0.5)
+# ax.set(xlabel='', ylabel='Firing Rate of pNK1 Neurons (spk/s)')
+# ax.set_ylim([-5,90])
+# ax.set_yticks([0,10,20,30,40,50,60,70,80,90])
+# ax.set_xticklabels(labels=["Control","NK1R-","GABAR-\nGlyR-","GABAR-\nGlyR-\nCNK1-","GABAR-\nGlyR-\nSSTNK1-","GABAR-\nGlyR-\nCRNK1-","GABAR-\nGlyR-\nAllNK1-","Control","NK1R-","GABAR-\nGlyR-","GABAR-\nGlyR-\nCNK1-","GABAR-\nGlyR-\nSSTNK1-","GABAR-\nGlyR-\nCRNK1-","GABAR-\nGlyR-\nAllNK1-"])
+# ax.legend_.remove()
 
 # Plot Figure 11A&B:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(8*cm, 5*cm), dpi=1200)
@@ -416,7 +448,7 @@ ax.legend_.remove()
 
 # General plot settings
 sns.despine(fig=None)
-plt.setp(ax.lines, color='k', linewidth=0.5)
+#plt.setp(ax.lines, color='k', linewidth=0.5)
 plt.setp(ax.artists, edgecolor='k',linewidth=0.5)
 for axis in ['left','bottom']:
   ax.spines[axis].set_linewidth(0.5)
@@ -427,8 +459,8 @@ for axis in ['left','bottom']:
 plt.tight_layout()
 
 # Saving Figures:
-fig.savefig('Figure10B-New.svg', format='svg', dpi=1200)
-fig.savefig('Figure10B-New.png', format='png', dpi=1200)
+fig.savefig('Figure1A-New-Scale.svg', format='svg', dpi=1200)
+fig.savefig('Figure1A-New-Scale.png', format='png', dpi=1200)
 
 # fig.savefig('Cand10-Dis.svg', format='svg', dpi=1200)
 # fig.savefig('Cand10-Dis.png', format='png', dpi=1200)
