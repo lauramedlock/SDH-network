@@ -41,10 +41,10 @@ cfg.VGLUT3_PKC_AMPA = 0.16629
 cfg.VGLUT3_PKC_NMDA = 0.15549
 cfg.PV_GABA = 0.29416              *0.6  #alt tuning (7C)
 cfg.PV_GLY =  0.011521             *0.6  #alt tuning (7C)
-cfg.DYN_ISLET_GABA = 0.36182   *0
+cfg.DYN_ISLET_GABA = 0.36182   
 cfg.ISLET_GABA = 0.34293     
-cfg.DYN_EX_GABA = 4.50e-05     *0  *25  #alt tuning (7C)
-cfg.DYN_EX_GLY = 4.50e-05      *0  *25  #alt tuning (7C)
+cfg.DYN_EX_GABA = 4.50e-05       *25  #alt tuning (7C)
+cfg.DYN_EX_GLY = 4.50e-05        *25  #alt tuning (7C)
 cfg.PKC_AMPA = 0.0021
 cfg.PKC_NMDA = 0.00315
 cfg.TrC_AMPA = 0.00225             
@@ -56,8 +56,8 @@ cfg.DOR_NMDA = 0.002250
 cfg.EX_NK1_AMPA = 8.82981e-06          
 cfg.EX_NK1_NMDA = 2.6699e-05
 cfg.EX_NK1_NK1 = 9.2715e-07      
-cfg.DYN_NK1_GABA = 6.3720e-06   *0
-cfg.DYN_NK1_GLY = 2.3608e-06    *0    
+cfg.DYN_NK1_GABA = 6.3720e-06   
+cfg.DYN_NK1_GLY = 2.3608e-06      
 
 # testing Ab-->eSST
 cfg.Ab_SOM_AMPA = 0.0221559  # Same as Ab-->E
