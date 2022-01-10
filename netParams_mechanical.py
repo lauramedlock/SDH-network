@@ -105,36 +105,36 @@ netParams.synMechParams['AMPA']  = {'mod': 'AMPA_DynSyn'   , 'tau_rise': 0.1, 't
 netParams.synMechParams['NMDA']  = {'mod': 'NMDA_DynSyn'   , 'tau_rise': 2  , 'tau_decay': 100          }
 netParams.synMechParams['NK13']  = {'mod': 'NK1_DynSyn'    , 'tau_rise': 100, 'tau_decay': 1000         }
 netParams.synMechParams['NK23']  = {'mod': 'NK1_DynSyn'    , 'tau_rise': 200, 'tau_decay': 3000         }
-netParams.synMechParams['GABA']  = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -70 }  # GABA for Excitatory Neur
-netParams.synMechParams['GABA2'] = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -70 }  # GABA for Inhibitory Neur
-netParams.synMechParams['GLY']   = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -70 }  # Gly for Excitatory Neur
-netParams.synMechParams['GLY2']  = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -70 }  # Gly for Inhibitory Neur
+netParams.synMechParams['GABA']  = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -45 }  # GABA for Excitatory Neur
+netParams.synMechParams['GABA2'] = {'mod': 'GABAa_DynSyn'  , 'tau_rise': 0.1, 'tau_decay': 20, 'e': -45 }  # GABA for Inhibitory Neur
+netParams.synMechParams['GLY']   = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -45 }  # Gly for Excitatory Neur
+netParams.synMechParams['GLY2']  = {'mod': 'Glycine_DynSyn', 'tau_rise': 0.1, 'tau_decay': 10, 'e': -45 }  # Gly for Inhibitory Neur
 
 ###################################################################################################################################
 #   Connect the spinal cord stimulation/natural input
 ###################################################################################################################################
 # from Ab_SAI to interneurons
-netParams.connParams['Ab_SAI_AMPA->SOM'] = {         # testing Ab-->eSST for R2
-    'oneSynPerNetcon': True,
-    'preConds': {'popLabel': 'Ab_SAI'}, 
-    'postConds': {'popLabel': 'SOM'},  
-    'weight': cfg.Ab_SOM_AMPA,           
-    'sec': 'dend',
-    'probability': 0.2,
-    'delay': 1.0,
-    'loc': 0.5,
-    'synMech': 'AMPA'} 
+# netParams.connParams['Ab_SAI_AMPA->SOM'] = {         # testing Ab-->eSST for R2
+#     'oneSynPerNetcon': True,
+#     'preConds': {'popLabel': 'Ab_SAI'}, 
+#     'postConds': {'popLabel': 'SOM'},  
+#     'weight': cfg.Ab_SOM_AMPA,           
+#     'sec': 'dend',
+#     'probability': 0.2,
+#     'delay': 1.0,
+#     'loc': 0.5,
+#     'synMech': 'AMPA'} 
 
-netParams.connParams['Ab_SAI_NMDA->SOM'] = {         # testing Ab-->eSST for R2
-    'oneSynPerNetcon': True,
-    'preConds': {'popLabel': 'Ab_SAI'}, 
-    'postConds': {'popLabel': 'SOM'},  
-    'weight': cfg.Ab_SOM_NMDA,           
-    'sec': 'dend',
-    'probability': 0.2,
-    'delay': 1.0,
-    'loc': 0.5,
-    'synMech': 'NMDA'} 
+# netParams.connParams['Ab_SAI_NMDA->SOM'] = {         # testing Ab-->eSST for R2
+#     'oneSynPerNetcon': True,
+#     'preConds': {'popLabel': 'Ab_SAI'}, 
+#     'postConds': {'popLabel': 'SOM'},  
+#     'weight': cfg.Ab_SOM_NMDA,           
+#     'sec': 'dend',
+#     'probability': 0.2,
+#     'delay': 1.0,
+#     'loc': 0.5,
+#     'synMech': 'NMDA'} 
 
 netParams.connParams['Ab_SAI_AMPA->PKC'] = {
     'oneSynPerNetcon': True,
@@ -214,27 +214,27 @@ netParams.connParams['Ab_SAI_AMPA->DYN'] = {
     'synMech': 'AMPA'} 
 
 # from Ab_SAII to interneurons
-netParams.connParams['Ab_SAII_AMPA->SOM'] = {          # testing Ab-->eSST for R2
-    'oneSynPerNetcon': True,
-    'preConds': {'popLabel': 'Ab_SAII'}, 
-    'postConds': {'popLabel': 'SOM'},  
-    'weight': cfg.Ab_SOM_AMPA,           
-    'sec': 'dend',
-    'probability': 0.2,
-    'delay': 1.0,
-    'loc': 0.5,
-    'synMech': 'AMPA'} 
+# netParams.connParams['Ab_SAII_AMPA->SOM'] = {          # testing Ab-->eSST for R2
+#     'oneSynPerNetcon': True,
+#     'preConds': {'popLabel': 'Ab_SAII'}, 
+#     'postConds': {'popLabel': 'SOM'},  
+#     'weight': cfg.Ab_SOM_AMPA,           
+#     'sec': 'dend',
+#     'probability': 0.2,
+#     'delay': 1.0,
+#     'loc': 0.5,
+#     'synMech': 'AMPA'} 
 
-netParams.connParams['Ab_SAII_NMDA->SOM'] = {           # testing Ab-->eSST for R2
-    'oneSynPerNetcon': True,
-    'preConds': {'popLabel': 'Ab_SAII'}, 
-    'postConds': {'popLabel': 'SOM'},  
-    'weight': cfg.Ab_SOM_NMDA,           
-    'sec': 'dend',
-    'probability': 0.2,
-    'delay': 1.0,
-    'loc': 0.5,
-    'synMech': 'NMDA'} 
+# netParams.connParams['Ab_SAII_NMDA->SOM'] = {           # testing Ab-->eSST for R2
+#     'oneSynPerNetcon': True,
+#     'preConds': {'popLabel': 'Ab_SAII'}, 
+#     'postConds': {'popLabel': 'SOM'},  
+#     'weight': cfg.Ab_SOM_NMDA,           
+#     'sec': 'dend',
+#     'probability': 0.2,
+#     'delay': 1.0,
+#     'loc': 0.5,
+#     'synMech': 'NMDA'} 
 
 
 netParams.connParams['Ab_SAII_AMPA->PKC'] = {

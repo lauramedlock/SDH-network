@@ -20,7 +20,7 @@ cfg.stim_ratios = 0.001 # 0mN to 25mN -> 0.001, 50mN -> 0.125, 100mN -> 0.25, 20
 # STIMULATION RATIO OF AB FIBERS ###
 cfg.AB_ratio = 0.4    # 0mN -> 0.001, 5mN->0.1, 10mN->0.2, 15mN->0.3, 20mN->0.4, 25mN->0.5, 30mN->0.6, 50mN->1.0, 100mN->1.0, 200mN -> 1.0, 400mN -> 1.0, 800mN --> 1.0
 
-cfg.freq = '20mN' #Change freq to match the stimulus given above
+cfg.freq = '50mN' #Change freq to match the stimulus given above
 
 ### SYNAPTIC WEIGHTS FOR FINAL MODEL ###
 cfg.Ab_EX_AMPA = 0.0221559
@@ -39,12 +39,12 @@ cfg.C_NK1_NMDA = 8.7447e-05
 cfg.C_NK1_NK1 = 3.2414e-08       
 cfg.VGLUT3_PKC_AMPA = 0.16629
 cfg.VGLUT3_PKC_NMDA = 0.15549
-cfg.PV_GABA = 0.29416              *0.6  #alt tuning (7C)
-cfg.PV_GLY =  0.011521             *0.6  #alt tuning (7C)
-cfg.DYN_ISLET_GABA = 0.36182   *0
+cfg.PV_GABA = 0.29416          *0.4    #*0.6  #alt tuning (7C)
+cfg.PV_GLY =  0.011521         *0.4    #*0.6  #alt tuning (7C)
+cfg.DYN_ISLET_GABA = 0.36182   
 cfg.ISLET_GABA = 0.34293     
-cfg.DYN_EX_GABA = 4.50e-05     *0  *25  #alt tuning (7C)
-cfg.DYN_EX_GLY = 4.50e-05      *0  *25  #alt tuning (7C)
+cfg.DYN_EX_GABA = 4.50e-05       #*25  #alt tuning (7C)
+cfg.DYN_EX_GLY = 4.50e-05        #*25  #alt tuning (7C)
 cfg.PKC_AMPA = 0.0021
 cfg.PKC_NMDA = 0.00315
 cfg.TrC_AMPA = 0.00225             
@@ -56,17 +56,17 @@ cfg.DOR_NMDA = 0.002250
 cfg.EX_NK1_AMPA = 8.82981e-06          
 cfg.EX_NK1_NMDA = 2.6699e-05
 cfg.EX_NK1_NK1 = 9.2715e-07      
-cfg.DYN_NK1_GABA = 6.3720e-06   *0
-cfg.DYN_NK1_GLY = 2.3608e-06    *0    
+cfg.DYN_NK1_GABA = 6.3720e-06   
+cfg.DYN_NK1_GLY = 2.3608e-06       
 
 # testing Ab-->eSST
-cfg.Ab_SOM_AMPA = 0.09 
-cfg.Ab_SOM_NMDA = 0.09  
+# cfg.Ab_SOM_AMPA = 0.09 
+# cfg.Ab_SOM_NMDA = 0.09  
 
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '20mN-AltTuning-ABtoeSST-iDYNablation'
+cfg.simLabel = '50mN-CD-PV40'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
 cfg.saveMat = False
@@ -77,7 +77,7 @@ cells = [x for x in range(400, 410, 1)]
 cfg.analysis['plotRaster'] = {'include': ['all'], 'timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False} #'raster.png'
 # cfg.analysis['plotSpikeHist'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'spikeHistBin': 5, 'saveFig': True, 'showFig': False}
 cfg.analysis['plotSpikeStats'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'saveFig': True, 'showFig': False}
-cfg.analysis['plotConn'] = {'includePre': ['all'], 'includePost': ['all'], 'feature': 'weight', 'saveFig': True, 'showFig': False, 'logPlot': True}
+#cfg.analysis['plotConn'] = {'includePre': ['all'], 'includePost': ['all'], 'feature': 'weight', 'saveFig': True, 'showFig': False, 'logPlot': True}
 cfg.analysis['plotTraces'] = {'include': [399,400,401,402,403,404,405,406,407,408,409],'oneFigPer':'trace','timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False}
 # cfg.analysis['plot2Dnet'] = False 
 
