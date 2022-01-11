@@ -58,7 +58,7 @@ def adjust_box_widths(g, fac):
 
 
 ### Import Data
-DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 6/Figure6C-200mN.xlsx')  #,sheet_name='Avg(Log)'
+DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 6/Figure6D-Data.xlsx')  #,sheet_name='Avg(Log)'
 #DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/GA/disinhibition/Cand10-Dis.xlsx')
 
 # Figure 1A (PAN Scaling)
@@ -494,5 +494,5 @@ for axis in ['left','bottom']:
 plt.tight_layout()
 
 # Saving Figures:
-fig.savefig('Figure6C-200mN.svg', format='svg', dpi=1200)
-fig.savefig('Figure6C-200mN.png', format='png', dpi=1200)
+fig.savefig('Figure6D-New.svg', format='svg', dpi=1200)
+fig.savefig('Figure6D-New.png', format='png', dpi=1200)
