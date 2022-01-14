@@ -4,7 +4,7 @@ from statistics import median, mean
 import json
 import pandas as pd
 
-with open('data_batch/10mN-CD-PV40.json', 'rb') as mechData: mechData = json.load(mechData)
+with open('data_batch/mech-CandF-Rescale.json', 'rb') as mechData: mechData = json.load(mechData)
 
 fitnessData = mechData['simData']
 
@@ -13,6 +13,7 @@ def fitnessFunc(simData, **kwargs):
     PRO2 = []
     PRO3 = []
     PRO4 = []
+    PRO5 = []
     for i in range(399, 409): # spikes of projection neurons for network 01 (50 mN)
         spkt01_ = len([spkt for spkt, spkid in zip(simData['spkt'], simData['spkid']) if spkid == i])
         PRO1.append(spkt01_)
@@ -22,14 +23,18 @@ def fitnessFunc(simData, **kwargs):
     for i in range(1217, 1227): # spikes of projection neurons for network 03 (200 mN)    
         spkt45_ = len([spkt for spkt, spkid in zip(simData['spkt'], simData['spkid']) if spkid == i])
         PRO3.append(spkt45_)
-    for i in range(1626, 1636): # spikes of projection neurons for network 03 (10 mN)    
+    for i in range(1626, 1636): # spikes of projection neurons for network 04 (10 mN)    
         spkt67_ = len([spkt for spkt, spkid in zip(simData['spkt'], simData['spkid']) if spkid == i])
         PRO4.append(spkt67_)
+    for i in range(2035, 2045): # spikes of projection neurons for network 05 (25 mN)    
+        spkt89_ = len([spkt for spkt, spkid in zip(simData['spkt'], simData['spkid']) if spkid == i])
+        PRO5.append(spkt89_)
 
     if PRO1 == []:PRO1.append(0)
     if PRO2 == []:PRO2.append(0)
     if PRO3 == []:PRO3.append(0)
     if PRO4 == []:PRO4.append(0)
+    if PRO5 == []:PRO5.append(0)
 
     # Firing Rate (total # of spikes / 5 seconds):
     numSec = 5 # sim length (s)
@@ -37,29 +42,26 @@ def fitnessFunc(simData, **kwargs):
     PRO2s = [x/numSec for x in PRO2] 
     PRO3s = [x/numSec for x in PRO3] 
     PRO4s = [x/numSec for x in PRO4] 
+    PRO5s = [x/numSec for x in PRO5]
     # Median Firing Rate:
     med_PRO1 = median(PRO1s)
     med_PRO2 = median(PRO2s)
     med_PRO3 = median(PRO3s)
     med_PRO4 = median(PRO4s)
-    # Mean Firing Rate:
-    mean_PRO1 = mean(PRO1s)
-    mean_PRO2 = mean(PRO2s)
-    mean_PRO3 = mean(PRO3s)
-    mean_PRO4 = mean(PRO4s)
+    med_PRO5 = median(PRO5s)
 
     if med_PRO1 == 0 or med_PRO2 == 0 or med_PRO3 == 0:
         fitness = 10000
     else:
-        fitness = abs((1.63 - med_PRO1)/1.63) + abs((5.46 - med_PRO2)/5.46) + abs((9.70 - med_PRO3)/9.70) + abs(0 - med_PRO4)
+        fitness = abs((1.63 - med_PRO1)/1.63) + abs((5.46 - med_PRO2)/5.46) + abs((9.70 - med_PRO3)/9.70) + abs(0 - med_PRO4) + abs(0 - med_PRO5)
 
-    return PRO1s, PRO2s, PRO3s, PRO4s, fitness
+    return PRO1s, PRO2s, PRO3s, PRO4s, PRO5s, fitness
 
 # Fitness of 
 fitness = fitnessFunc(fitnessData)
 
 # Print results:
-# print('fitness =',fitness[4])
+print('fitness =',fitness[5])
 print('Median =',fitness[0])
 # print('Mean =',fitness[5])
 # print('Median (100mN) =',fitness[1])
