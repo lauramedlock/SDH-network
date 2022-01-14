@@ -58,7 +58,7 @@ def adjust_box_widths(g, fac):
 
 
 ### Import Data
-DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 6/Figure6D-Data.xlsx')  #,sheet_name='Avg(Log)'
+DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/Figures/Figure 3/Figure3C-Data-CandF-Dis.xlsx')  #,sheet_name='Avg(Log)'
 #DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH-Model/GA/disinhibition/Cand10-Dis.xlsx')
 
 # Figure 1A (PAN Scaling)
@@ -106,17 +106,24 @@ DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH
 
 
 ## NEW Figure 3B/C (little boxplots) 
-# fig, ax = plt.subplots(1, sharex=False, figsize=(3.5*cm, 3.8*cm), dpi=1200)  
-# my_pal = {"Control":"w","Dis":"w"} 
-# my_pal2 = {"Control":"w","Dis":"r"}
-# ax = sns.boxplot(x="Mechanical Force", y="Firing Rate", hue='Type', data=DataMatrix, palette=my_pal,dodge=True, showfliers = False,linewidth=0.5) 
-# ax = sns.stripplot(x="Mechanical Force", y="Firing Rate", hue='Type',data=DataMatrix, palette=my_pal2,marker="^",edgecolor="black",jitter=False,dodge=True,size=3,linewidth=0.5)
-# ax.set_yticks([0,100,200,300])
-# ax.set_xticklabels(labels=["10","25","50","100","200"])
-# ax.set_yticklabels(labels=["0","XX","XX","XX"])
-# ax.set(xlabel='', ylabel='')
-# ax.set_ylim([-5,350])
-# ax.legend_.remove()
+fig, ax = plt.subplots(1, sharex=False, figsize=(3.5*cm, 3.8*cm), dpi=1200)  
+my_pal = {"Control":"w","Dis":"w"} 
+my_pal2 = {"Control":"w","Dis":"r"}
+val = [0,1,2,3,4]
+ctrl = [0,0,1.5,2.3,11]
+dis = [0,20.9,101.5,116,143.3]
+ax = plt.plot(val, dis,linewidth=1)
+x_coordinates = [-0.5, 9.5] # plot line at median
+y_coordinates = [30, 30] # plot line at median
+ax = plt.plot(x_coordinates, y_coordinates,linestyle='dashed',linewidth=1)
+ax = sns.boxplot(x="Mechanical Force", y="Firing Rate", hue='Type', data=DataMatrix, palette=my_pal,dodge=True, showfliers = False,linewidth=0.5) 
+ax = sns.stripplot(x="Mechanical Force", y="Firing Rate", hue='Type',data=DataMatrix, palette=my_pal2,marker="^",edgecolor="black",jitter=False,dodge=True,size=3,linewidth=0.5)
+ax.set_yticks([0,100,200,300])
+ax.set_xticklabels(labels=["10","25","50","100","200"])
+ax.set_yticklabels(labels=["0","XX","XX","XX"])
+ax.set(xlabel='', ylabel='')
+ax.set_ylim([-5,350])
+ax.legend_.remove()
 ## New Figure 3D (boxplots)
 # fig, ax = plt.subplots(1, sharex=False, figsize=(6*cm, 5*cm), dpi=1200)  
 # my_pal = {"C":"#444444","Ab":"#b2b2b2"} 
@@ -374,20 +381,20 @@ DataMatrix = pd.read_excel(r'/Users/lauramedlock 1/Desktop/Modeling-Projects/SDH
 # ax.set_ylim([-5,90])
 # ax.legend_.remove()
 # Figure 6B/D (CD and CDPV):
-fig, ax = plt.subplots(1, sharex=False, figsize=(4*cm, 4*cm), dpi=1200)  
-my_pal = {'CD':'#ffc300','CDPV':'#b266b2'} 
-val = [0,1,2,3]
-ctrl = [0,0,0.4,11.3]
-dis = [0,9.3,59.8,68]
-ax = sns.boxplot(x="Force", y="Firing Rate", hue='Change',data=DataMatrix, palette=my_pal,dodge=True, showfliers = False,linewidth=0.5)
-ax = sns.stripplot(x="Force", y="Firing Rate", hue='Change',data=DataMatrix, palette=my_pal,edgecolor="black",jitter=False,dodge=False,size=5,linewidth=0.5)
-ax = sns.lineplot(x=val,y=ctrl,linewidth=0.5)
-ax = sns.lineplot(x=val,y=dis,linewidth=0.5)
-ax.legend_.remove()
-ax.set_ylim([-5,75])
-ax.set_yticks([0,25,50,75])
-ax.set_xticklabels(labels=['10','20','50','200'])
-ax.set(xlabel='', ylabel='pNK1 Firing Rate (spk/s)')
+# fig, ax = plt.subplots(1, sharex=False, figsize=(4*cm, 4*cm), dpi=1200)  
+# my_pal = {'CD':'#ffc300','CDPV':'#b266b2'} 
+# val = [0,1,2,3]
+# ctrl = [0,0,0.4,11.3]
+# dis = [0,9.3,59.8,68]
+# ax = sns.boxplot(x="Force", y="Firing Rate", hue='Change',data=DataMatrix, palette=my_pal,dodge=True, showfliers = False,linewidth=0.5)
+# ax = sns.stripplot(x="Force", y="Firing Rate", hue='Change',data=DataMatrix, palette=my_pal,edgecolor="black",jitter=False,dodge=False,size=5,linewidth=0.5)
+# ax = sns.lineplot(x=val,y=ctrl,linewidth=0.5)
+# ax = sns.lineplot(x=val,y=dis,linewidth=0.5)
+# ax.legend_.remove()
+# ax.set_ylim([-5,75])
+# ax.set_yticks([0,25,50,75])
+# ax.set_xticklabels(labels=['10','20','50','200'])
+# ax.set(xlabel='', ylabel='pNK1 Firing Rate (spk/s)')
 # # Plot Figure 6C:
 # fig, ax = plt.subplots(1, sharex=False, figsize=(7.5*cm, 3.8*cm), dpi=1200)
 # my_pal = {"Control":"white", "IRB":"#ff0000","CD":"#ffc300","CDPV":"#b266b2"}
@@ -494,5 +501,5 @@ for axis in ['left','bottom']:
 plt.tight_layout()
 
 # Saving Figures:
-fig.savefig('Figure6D-New.svg', format='svg', dpi=1200)
-fig.savefig('Figure6D-New.png', format='png', dpi=1200)
+fig.savefig('Figure3C-CandF.svg', format='svg', dpi=1200)
+fig.savefig('Figure3C-CandF.png', format='png', dpi=1200)
