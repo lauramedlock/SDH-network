@@ -96,7 +96,6 @@ cfg.DYN_NK1_GLY = 2.3608e-06
 # cfg.DYN_NK1_GABA =           0.000542035   *0.02  
 # cfg.DYN_NK1_GLY =            0.116383779   *0.02  
 
-
 # testing Ab-->eSST
 # cfg.Ab_SOM_AMPA = 0.09 
 # cfg.Ab_SOM_NMDA = 0.09  
@@ -116,7 +115,7 @@ cfg.analysis['plotRaster'] = {'include': ['all'], 'timeRange': [0, cfg.duration]
 # cfg.analysis['plotSpikeHist'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'spikeHistBin': 5, 'saveFig': True, 'showFig': False}
 cfg.analysis['plotSpikeStats'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'saveFig': True, 'showFig': False}
 #cfg.analysis['plotConn'] = {'includePre': ['all'], 'includePost': ['all'], 'feature': 'weight', 'saveFig': True, 'showFig': False, 'logPlot': True}
-cfg.analysis['plotTraces'] = {'include': [399,400,401,402,403,404,405,406,407,408,409],'oneFigPer':'trace','timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False}
+# cfg.analysis['plotTraces'] = {'include': [399,400,401,402,403,404,405,406,407,408,409],'oneFigPer':'trace','timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False}
 # cfg.analysis['plot2Dnet'] = False 
 
 # use for GA simulation
