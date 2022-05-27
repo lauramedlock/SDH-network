@@ -49,15 +49,23 @@ with open('spkt_Ad_%s.json' %(cfg.freq), 'w') as Ad: json.dump(spkt_Ad, Ad)
 with open('spkt_C_%s.json' %(cfg.freq), 'w') as  C: json.dump(spkt_C, C)
 '''
 
+### SCS: AB Input from Model or Experimental Data ###
+# Synchronous Input (50Hz)
+with open('SCS_sync_input_50Hz_SAI.json', 'rb') as spkt_SAI: spkt_SAI = json.load(spkt_SAI)
+with open('SCS_sync_input_50Hz_SAII.json', 'rb') as spkt_SAII: spkt_SAII = json.load(spkt_SAII)
+# Asynchronous Input (1kHz)
+# with open('SCS_async_input_1kHz_SAI.json', 'rb') as spkt_SAI: spkt_SAI = json.load(spkt_SAI)
+# with open('SCS_async_input_1kHz_SAII.json', 'rb') as spkt_SAII: spkt_SAII = json.load(spkt_SAII)
+
 ### FIXED INPUT FROM AFFERENT FIBERS (SAME SPIKE TRAINS PER RUN) ###
-with open('spkt_SAI_%s.json' %(cfg.freq), 'rb') as spkt_SAI: spkt_SAI = json.load(spkt_SAI)
-with open('spkt_SAII_%s.json' %(cfg.freq), 'rb') as spkt_SAII: spkt_SAII = json.load(spkt_SAII)
+# with open('spkt_SAI_%s.json' %(cfg.freq), 'rb') as spkt_SAI: spkt_SAI = json.load(spkt_SAI)
+# with open('spkt_SAII_%s.json' %(cfg.freq), 'rb') as spkt_SAII: spkt_SAII = json.load(spkt_SAII)
 with open('spkt_Ad_%s.json' %(cfg.freq), 'rb') as spkt_Ad: spkt_Ad = json.load(spkt_Ad)
 with open('spkt_C_%s.json' %(cfg.freq), 'rb') as spkt_C: spkt_C = json.load(spkt_C)
 
 ## PRIMARY AFFERENTS -- TIME-VARYING INPUT SPIKE TRAINS IMPORTED AS VECTSTIM
-netParams.popParams['Ab_SAI'] = {'cellModel': 'VecStim', 'numCells': 10, 'spkTimes': spkt_SAI}  # 0-9 input from Ab_slow adapting type I
-netParams.popParams['Ab_SAII'] = {'cellModel': 'VecStim', 'numCells': 10, 'spkTimes': spkt_SAII}  # 10-19 input from Ab_slow adapting type II
+netParams.popParams['Ab_SAI'] = {'cellModel': 'VecStim', 'numCells': 5, 'spkTimes': spkt_SAI}  # 0-9 input from Ab_slow adapting type I
+netParams.popParams['Ab_SAII'] = {'cellModel': 'VecStim', 'numCells': 5, 'spkTimes': spkt_SAII}  # 10-19 input from Ab_slow adapting type II
 netParams.popParams['Ad'] = {'cellModel': 'VecStim', 'numCells': 20, 'spkTimes': spkt_Ad}  # 20-39 input from Adelta
 netParams.popParams['C_PEP'] = {'cellModel': 'VecStim', 'numCells': 80, 'spkTimes': spkt_C}  # 40 - 119 input from peptidergic C fibers
 netParams.popParams['C_NP'] = {'cellModel': 'VecStim', 'numCells': 80, 'spkTimes': spkt_C}  # 120-199 input from non-peptidergic C fibers

@@ -3,7 +3,7 @@
 """
 Created on Wed Apr 14 09:51:05 2021
 @author: lauramed
-For plotting figures (Sekiguchi et al. 2021)
+For plotting figures (Medlock et al. 2022)
 """
 
 import seaborn as sns

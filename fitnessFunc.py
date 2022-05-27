@@ -62,7 +62,7 @@ fitness = fitnessFunc(fitnessData)
 
 # Print results:
 print('fitness =',fitness[5])
-print('Median =',fitness[0])
+# print('Median =',fitness[0])
 # print('Mean =',fitness[5])
 # print('Median (100mN) =',fitness[1])
 # print('Median (200mN) =',fitness[2])

@@ -16,11 +16,11 @@ cfg.recordStep = 0.025
 #*--- PARAMETERS FOR NETPARAMS ---*#
 #*--------------------------------*#
 # STIMULATION RATIO OF C AND AD FIBERS ###
-cfg.stim_ratios = 0.001 # 0mN to 25mN -> 0.001, 50mN -> 0.125, 100mN -> 0.25, 200mN -> 0.5, 400mN -> 1.0, 800mN --> 2.0
+cfg.stim_ratios = 0.5 # 0mN to 25mN -> 0.001, 50mN -> 0.125, 100mN -> 0.25, 200mN -> 0.5, 400mN -> 1.0, 800mN --> 2.0
 # STIMULATION RATIO OF AB FIBERS ###
-cfg.AB_ratio = 0.4    # 0mN -> 0.001, 5mN->0.1, 10mN->0.2, 15mN->0.3, 20mN->0.4, 25mN->0.5, 30mN->0.6, 50mN->1.0, 100mN->1.0, 200mN -> 1.0, 400mN -> 1.0, 800mN --> 1.0
+cfg.AB_ratio = 1.0    # 0mN -> 0.001, 5mN->0.1, 10mN->0.2, 15mN->0.3, 20mN->0.4, 25mN->0.5, 30mN->0.6, 50mN->1.0, 100mN->1.0, 200mN -> 1.0, 400mN -> 1.0, 800mN --> 1.0
 
-cfg.freq = '100mN' #Change freq to match the stimulus given above
+cfg.freq = '200mN' #Change freq to match the stimulus given above
 
 ### SYNAPTIC WEIGHTS FOR FINAL MODEL ###
 cfg.Ab_EX_AMPA = 0.0221559
@@ -36,9 +36,9 @@ cfg.C_DYN_AMPA = 0.184135
 cfg.C_ISLET_AMPA = 0.123535             
 cfg.C_NK1_AMPA = 0.00009       
 cfg.C_NK1_NMDA = 8.7447e-05    
-cfg.C_NK1_NK1 = 3.2414e-08       
-cfg.VGLUT3_PKC_AMPA = 0.16629
-cfg.VGLUT3_PKC_NMDA = 0.15549
+cfg.C_NK1_NK1 = 3.2414e-08      *0 
+cfg.VGLUT3_PKC_AMPA = 0.16629 
+cfg.VGLUT3_PKC_NMDA = 0.15549 
 cfg.PV_GABA = 0.29416             #*0.6  #alt tuning (7C)
 cfg.PV_GLY =  0.011521            #*0.6  #alt tuning (7C)
 cfg.DYN_ISLET_GABA = 0.36182   
@@ -49,52 +49,15 @@ cfg.PKC_AMPA = 0.0021
 cfg.PKC_NMDA = 0.00315
 cfg.TrC_AMPA = 0.00225             
 cfg.TrC_NMDA = 0.003              
-cfg.VGLUT3_SOM_AMPA = 0.00006
-cfg.VGLUT3_SOM_NMDA = 0.00006
+cfg.VGLUT3_SOM_AMPA = 0.00006  
+cfg.VGLUT3_SOM_NMDA = 0.00006  
 cfg.DOR_AMPA = 0.002250          
 cfg.DOR_NMDA = 0.002250           
 cfg.EX_NK1_AMPA = 8.82981e-06          
 cfg.EX_NK1_NMDA = 2.6699e-05
-cfg.EX_NK1_NK1 = 9.2715e-07      
+cfg.EX_NK1_NK1 = 9.2715e-07     *0
 cfg.DYN_NK1_GABA = 6.3720e-06   
 cfg.DYN_NK1_GLY = 2.3608e-06       
-
-## CAND F - RESCALED ##
-# cfg.Ab_EX_AMPA =             0.008529808   *0.65
-# cfg.Ab_EX_NMDA =             0.000124622   *0.65
-# cfg.Ab_IN_AMPA =             0.237453619   *0.65
-# cfg.Ab_IN_NMDA =             0.102756279   *0.65
-# cfg.Ad_AMPA =                0.009558087   *0.02
-# cfg.Ad_NMDA =                0.106872827   *0.02
-# cfg.C_EX_AMPA =              0.165592875   *0.02
-# cfg.C_EX_NMDA =              0.001708539   *0.02
-# cfg.C_TrC_AMPA =             0.413510983   *0.02
-# cfg.C_DYN_AMPA =             0.369765081   *0.02
-# cfg.C_ISLET_AMPA =           0.055811139   *0.02
-# cfg.C_NK1_AMPA =             0.208170478   *0.02
-# cfg.C_NK1_NMDA =             0.000255889   *0.02
-# cfg.C_NK1_NK1 =              7.80E-07
-# cfg.VGLUT3_PKC_AMPA =        0.055479717   *0.65
-# cfg.VGLUT3_PKC_NMDA =        3.39E-08      *0.65
-# cfg.PV_GABA =                0.421640668   *0.65  
-# cfg.PV_GLY =                 0.174798964   *0.65  
-# cfg.DYN_ISLET_GABA =         0.335214978   *0.65  
-# cfg.ISLET_GABA =             0.000295429   *0.65  
-# cfg.DYN_EX_GABA =            5.93E-07      *0.02  
-# cfg.DYN_EX_GLY =             0.425370959   *0.02  
-# cfg.PKC_AMPA =               0.005840738   *0.65
-# cfg.PKC_NMDA =               0.416795325   *0.65
-# cfg.TrC_AMPA =               0.014717611   *0.02
-# cfg.TrC_NMDA =               0.131694822   *0.02
-# cfg.VGLUT3_SOM_AMPA =        0.287674635   *0.65
-# cfg.VGLUT3_SOM_NMDA =        1.32E-07      *0.65
-# cfg.DOR_AMPA =               0.359774785   *0.02
-# cfg.DOR_NMDA =               0.09598056    *0.02
-# cfg.EX_NK1_AMPA =            0.368277022   *0.02
-# cfg.EX_NK1_NMDA =            2.02E-05      *0.02
-# cfg.EX_NK1_NK1 =             8.77E-07   
-# cfg.DYN_NK1_GABA =           0.000542035   *0.02  
-# cfg.DYN_NK1_GLY =            0.116383779   *0.02  
 
 # testing Ab-->eSST
 # cfg.Ab_SOM_AMPA = 0.09 
@@ -103,7 +66,7 @@ cfg.DYN_NK1_GLY = 2.3608e-06
 cfg.recordTraces['vs'] = {'sec':'soma', 'loc':0.5,'var':'v'}
 
 # SAVING
-cfg.simLabel = '100mN'
+cfg.simLabel = '200mN-NK1Rb-50HzSCS'
 cfg.saveFolder = 'data_batch'
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
 cfg.saveMat = False
@@ -111,15 +74,15 @@ cfg.saveJson = True
 
 # ANALYSIS AND PLOTTING
 cells = [x for x in range(400, 410, 1)]
-cfg.analysis['plotRaster'] = {'include': ['all'], 'timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False} #'raster.png'
+cfg.analysis['plotRaster'] = {'include': ['Ab_SAI','Ab_SAII','NK1'], 'timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False} #'raster.png'
 # cfg.analysis['plotSpikeHist'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'spikeHistBin': 5, 'saveFig': True, 'showFig': False}
 cfg.analysis['plotSpikeStats'] = {'include': ['eachPop'], 'timeRange': [0,cfg.duration], 'saveFig': True, 'showFig': False}
 #cfg.analysis['plotConn'] = {'includePre': ['all'], 'includePost': ['all'], 'feature': 'weight', 'saveFig': True, 'showFig': False, 'logPlot': True}
-# cfg.analysis['plotTraces'] = {'include': [399,400,401,402,403,404,405,406,407,408,409],'oneFigPer':'trace','timeRange': [0, cfg.duration], 'saveFig': True, 'showFig': False}
+cfg.analysis['plotTraces'] = {'include': [230,231,300,301,220,221,222,223],'timeRange': [0, 5000], 'saveFig': True, 'showFig': False}   # 'oneFigPer':'trace'
 # cfg.analysis['plot2Dnet'] = False 
 
 # use for GA simulation
-cfg.verbose = True
+cfg.verbose = False
 cfg.printPopAvgRates = [0, 5000]
 cfg.dt = 0.025
 
